@@ -1,16 +1,18 @@
 # Name:
 # Section:
 # hw2.py
+import math
+import random
 
 ##### Template for Homework 2, exercises 2.0 - 2.5  ######
 
 # **********  Exercise 2.0 ********** 
 
-def f1(x):
-    print x + 1
+#def f1(x):
+    #print x + 1
 
-def f2(x):
-    return x + 1
+#def f2(x):
+    #return x + 1
 
 # **********  Exercise 2.1 ********** 
 
@@ -75,10 +77,26 @@ def f2(x):
 
 ## 2 - roll_dice function - remember that a die's lowest number is 1;
                             #its highest is the number of sides it has
-##### YOUR CODE HERE #####
-
+def roll_dice(sides, amt):
+    total = 0
+    for i in amt:
+        roll = random.randint(1, sides)
+        print roll,
+        total += roll
+        
+    print "The total of your dice rolls is", total, "that is all."
+        
 # Test Cases
-##### YOUR CODE HERE #####                            
+quit = False
+while not quit:
+    sides = int(raw_input("How many sides do the dice you are rolling have?\n"))
+    amt = int(raw_input("How many dice will you be rolling this turn?\n"))
+    roll_dice(sides, amt)
+    quit = raw_input("Please enter 'q' if you would like to quit.")
+    if quit.lower() == 'q':
+        quit = True
+    else:
+        quit = False
 
 
 # ********** Exercise 2.5 **********
